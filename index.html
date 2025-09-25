@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wedding AR Invitation</title>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/aframe@1.5.0/dist/aframe.min.js"></script> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.0/dist/mindar-aframe.js"></script> -->
+   <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+</head>
+<body style="margin:0; overflow:hidden;">
+  <a-scene mindar-image="imageTargetSrc: targetsMegMarriage.mind;" 
+           embedded
+           color-space="sRGB"
+           renderer="precision: mediump; antialias: true; alpha: true;"
+           vr-mode-ui="enabled: false"
+           device-orientation-permission-ui="enabled: true">
+
+    <!-- Camera -->
+    <a-camera mindar-image-camera></a-camera>
+
+
+    <!-- AR Content -->
+    <a-entity mindar-image-target="targetIndex: 0">
+
+      <!-- 3D Couple Model -->
+      <!-- <a-entity gltf-model="couple.glb"  -->
+                <!-- scale="0.5 0.5 0.5"  -->
+                <!-- position="0 0 0"> -->
+        <!-- <a-animation attribute="rotation" to="0 360 0" dur="15000" repeat="indefinite"></a-animation> -->
+      <!-- </a-entity> -->
+
+      <!-- Names -->
+      <a-text value="M. Meganathan & A. Divya" 
+              color="#FF69B4" 
+              position="0 1 0" 
+              align="center" 
+              scale="1.2 1.2 1.2">
+        <a-animation attribute="rotation" to="0 360 0" dur="10000" repeat="indefinite"></a-animation>
+      </a-text>
+
+      <!-- Date -->
+      <a-text value="24th October 2025" 
+              color="#FFFFFF" 
+              position="0 0.7 0" 
+              align="center" 
+              scale="1 1 1">
+      </a-text>
+
+      <!-- Optional: Music -->
+      <!-- <a-sound src="wedding_music.mp3" autoplay="true" loop="true"></a-sound> -->
+
+    </a-entity>
+
+  </a-scene>
+</body>
+</html>
