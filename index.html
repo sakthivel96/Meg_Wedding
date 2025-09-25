@@ -45,48 +45,43 @@
     <!-- AR Content -->
     <a-entity mindar-image-target="targetIndex: 0" position="0 0 0">
 
-      <!-- Rotating Names -->
-      <a-text value="M. Meganathan & A. Divya" 
-              color="#FF69B4" 
-              position="0 1 0" 
-              align="center" 
-              scale="1 1 1">
-        <a-animation attribute="rotation" to="0 360 0" dur="20000" repeat="indefinite" easing="linear"></a-animation>
-      </a-text>
+  <!-- Rotating Names -->
+  <a-text value="M. Meganathan & A. Divya" 
+          color="#FF69B4" 
+          position="0 1 0" 
+          align="center" 
+          scale="1 1 1">
+    <a-animation attribute="rotation" to="0 360 0" dur="20000" repeat="indefinite" easing="linear"></a-animation>
+  </a-text>
 
-      <!-- Date -->
-      <a-text value="24th October 2025" 
-              color="#FFFFFF" 
-              position="0 0.7 0" 
-              align="center" 
-              scale="0.8 0.8 0.8">
-      </a-text>
+  <!-- Floating Hearts -->
+  <a-entity position="0 1.2 0">
+    <a-text value="❤️" scale="0.5 0.5 0.5" look-at="[camera]" position="-0.5 0 0">
+      <a-animation attribute="position" to="-0.5 0.5 0" dur="3000" direction="alternate" repeat="indefinite"></a-animation>
+    </a-text>
+    <a-text value="💖" scale="0.5 0.5 0.5" look-at="[camera]" position="0 0 0">
+      <a-animation attribute="position" to="0 0.5 0" dur="3500" direction="alternate" repeat="indefinite"></a-animation>
+    </a-text>
+    <a-text value="💞" scale="0.5 0.5 0.5" look-at="[camera]" position="0.5 0 0">
+      <a-animation attribute="position" to="0.5 0.5 0" dur="4000" direction="alternate" repeat="indefinite"></a-animation>
+    </a-text>
+  </a-entity>
 
-      <!-- Floating Hearts -->
-      <a-entity id="hearts">
-        <a-text value="❤️" position="-0.5 1.2 0" scale="0.5 0.5 0.5">
-          <a-animation attribute="position" to="-0.5 1.7 0" dur="3000" direction="alternate" repeat="indefinite"></a-animation>
-        </a-text>
-        <a-text value="💖" position="0 1.1 0" scale="0.5 0.5 0.5">
-          <a-animation attribute="position" to="0 1.6 0" dur="3500" direction="alternate" repeat="indefinite"></a-animation>
-        </a-text>
-        <a-text value="💞" position="0.5 1.0 0" scale="0.5 0.5 0.5">
-          <a-animation attribute="position" to="0.5 1.5 0" dur="4000" direction="alternate" repeat="indefinite"></a-animation>
-        </a-text>
-      </a-entity>
+  <!-- Confetti / Sparkle -->
+  <a-entity position="0 1 0">
+    <a-sphere color="#FFD700" radius="0.03" position="-0.3 0 0">
+      <a-animation attribute="position" to="-0.3 0.5 0" dur="4000" direction="alternate" repeat="indefinite"></a-animation>
+    </a-sphere>
+    <a-sphere color="#FF69B4" radius="0.03" position="0 0 0">
+      <a-animation attribute="position" to="0 0.5 0" dur="4500" direction="alternate" repeat="indefinite"></a-animation>
+    </a-sphere>
+    <a-sphere color="#FFFFFF" radius="0.03" position="0.3 0 0">
+      <a-animation attribute="position" to="0.3 0.5 0" dur="5000" direction="alternate" repeat="indefinite"></a-animation>
+    </a-sphere>
+  </a-entity>
 
-      <!-- Confetti/Sparkle -->
-      <a-entity id="confetti">
-        <a-sphere color="#FFD700" radius="0.02" position="-0.3 1.5 0">
-          <a-animation attribute="position" to="-0.3 2 0" dur="4000" direction="alternate" repeat="indefinite"></a-animation>
-        </a-sphere>
-        <a-sphere color="#FF69B4" radius="0.02" position="0 1.2 0">
-          <a-animation attribute="position" to="0 1.7 0" dur="4500" direction="alternate" repeat="indefinite"></a-animation>
-        </a-sphere>
-        <a-sphere color="#FFFFFF" radius="0.02" position="0.3 1.0 0">
-          <a-animation attribute="position" to="0.3 1.5 0" dur="5000" direction="alternate" repeat="indefinite"></a-animation>
-        </a-sphere>
-      </a-entity>
+</a-entity>
+
 
       <!-- Optional 3D Couple Model -->
       <!--
