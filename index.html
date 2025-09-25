@@ -17,113 +17,97 @@
 </head>
 <body>
 
-  <a-scene mindar-image="imageTargetSrc: targetsMegMarriage.mind; maxTrack: 2; filterMinCF:0.001;" 
-           color-space="sRGB"
-           renderer="antialias: true; alpha: true;"
-           vr-mode-ui="enabled: false"
-           device-orientation-permission-ui="enabled: true">
+<a-scene mindar-image="imageTargetSrc: targetsMegMarriage.mind; maxTrack: 2; filterMinCF:0.001;" 
+         color-space="sRGB"
+         renderer="antialias: true; alpha: true;"
+         vr-mode-ui="enabled: false"
+         device-orientation-permission-ui="enabled: true">
 
-    <!-- Camera -->
-    <a-camera mindar-image-camera></a-camera>
+  <!-- Camera -->
+  <a-camera mindar-image-camera></a-camera>
 
-    <!-- Debug Text -->
-    <a-text id="debugText" value="Initializing AR..." 
-            color="#FF0000" 
-            position="0 2 0" 
+  <!-- Debug Text -->
+  <a-text id="debugText" value="Initializing AR..." 
+          color="#FF0000" 
+          position="0 2 0" 
+          align="center" 
+          scale="0.8 0.8 0.8">
+  </a-text>
+
+  <!-- AR Content -->
+  <a-entity mindar-image-target="targetIndex: 0" position="0 0 0">
+
+    <!-- Rotating Names -->
+    <a-text value="M. Meganathan & A. Divya" 
+            color="#FF69B4" 
+            position="0 1 0" 
+            align="center" 
+            scale="1 1 1">
+      <!-- <a-animation attribute="rotation" to="0 360 0" dur="20000" repeat="indefinite" easing="linear"></a-animation> -->
+    </a-text>
+
+    <!-- Date -->
+    <a-text value="24th October 2025" 
+            color="#FFFFFF" 
+            position="0 0.7 0" 
             align="center" 
             scale="0.8 0.8 0.8">
     </a-text>
 
-    <!-- AR Content -->
-    <a-entity mindar-image-target="targetIndex: 0" position="0 0 0">
+    <!-- Floating Animated Images -->
+    <a-entity position="0 1 0">
+      <a-plane src="hearts_1.png" height="0.2" width="0.2" 
+               position="-0.6 0 0" look-at="[camera]">
+        <a-animation attribute="position" to="-0.6 0.6 0" dur="3000" direction="alternate" repeat="indefinite"></a-animation>
+      </a-plane>
 
-      <!-- Rotating Names -->
-      <a-text value="M. Meganathan & A. Divya" 
-              color="#FF69B4" 
-              position="0 1 0" 
-              align="center" 
-              scale="1 1 1">
-        <a-animation attribute="rotation" to="0 360 0" dur="20000" repeat="indefinite" easing="linear"></a-animation>
-      </a-text>
+      <a-plane src="hearts_2.png" height="0.2" width="0.2" 
+               position="-0.3 0 0" look-at="[camera]">
+        <a-animation attribute="position" to="-0.3 0.7 0" dur="3500" direction="alternate" repeat="indefinite"></a-animation>
+      </a-plane>
 
-      <!-- Date -->
-      <a-text value="24th October 2025" 
-              color="#FFFFFF" 
-              position="0 0.7 0" 
-              align="center" 
-              scale="0.8 0.8 0.8">
-      </a-text>
+      <a-plane src="wedding_1.png" height="0.2" width="0.2" 
+               position="0 0 0" look-at="[camera]">
+        <a-animation attribute="position" to="0 0.5 0" dur="4000" direction="alternate" repeat="indefinite"></a-animation>
+      </a-plane>
 
-      <!-- Floating Hearts (Mobile-Optimized using text component) -->
-      <a-entity position="0 1.2 0">
-        <a-entity text="value: ❤️; color: #FF0000; align: center; width: 0.5" 
-                  look-at="[camera]" position="-0.5 0 0">
-          <a-animation attribute="position" to="-0.5 0.5 0" dur="3000" direction="alternate" repeat="indefinite"></a-animation>
-        </a-entity>
-        <a-entity text="value: 💖; color: #FF69B4; align: center; width: 0.5" 
-                  look-at="[camera]" position="0 0 0">
-          <a-animation attribute="position" to="0 0.5 0" dur="3500" direction="alternate" repeat="indefinite"></a-animation>
-        </a-entity>
-        <a-entity text="value: 💞; color: #FFFFFF; align: center; width: 0.5" 
-                  look-at="[camera]" position="0.5 0 0">
-          <a-animation attribute="position" to="0.5 0.5 0" dur="4000" direction="alternate" repeat="indefinite"></a-animation>
-        </a-entity>
-      </a-entity>
+      <a-plane src="wedding_2.png" height="0.2" width="0.2" 
+               position="0.3 0 0" look-at="[camera]">
+        <a-animation attribute="position" to="0.3 0.6 0" dur="4500" direction="alternate" repeat="indefinite"></a-animation>
+      </a-plane>
 
-      <!-- Confetti / Sparkle -->
-      <a-entity position="0 1 0">
-        <a-sphere color="#FFD700" radius="0.04" position="-0.3 0 0">
-          <a-animation attribute="position" to="-0.3 0.5 0" dur="4000" direction="alternate" repeat="indefinite"></a-animation>
-        </a-sphere>
-        <a-sphere color="#FF69B4" radius="0.04" position="0 0 0">
-          <a-animation attribute="position" to="0 0.5 0" dur="4500" direction="alternate" repeat="indefinite"></a-animation>
-        </a-sphere>
-        <a-sphere color="#FFFFFF" radius="0.04" position="0.3 0 0">
-          <a-animation attribute="position" to="0.3 0.5 0" dur="5000" direction="alternate" repeat="indefinite"></a-animation>
-        </a-sphere>
-      </a-entity>
-
-      <!-- Optional 3D Couple Model -->
-      <!--
-      <a-entity gltf-model="couple.glb" 
-                scale="0.5 0.5 0.5" 
-                position="0 0 0">
-        <a-animation attribute="rotation" to="0 360 0" dur="30000" repeat="indefinite" easing="linear"></a-animation>
-      </a-entity>
-      -->
-
-      <!-- Optional Music -->
-      <!--
-      <a-sound src="wedding_music.mp3" autoplay="true" loop="true"></a-sound>
-      -->
-
+      <a-plane src="wedding_3.png" height="0.2" width="0.2" 
+               position="0.6 0 0" look-at="[camera]">
+        <a-animation attribute="position" to="0.6 0.7 0" dur="5000" direction="alternate" repeat="indefinite"></a-animation>
+      </a-plane>
     </a-entity>
 
-  </a-scene>
+  </a-entity>
+</a-scene>
 
-  <!-- MindAR Debug Script -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const sceneEl = document.querySelector("a-scene");
-      const debugText = document.querySelector("#debugText");
+<!-- MindAR Debug Script -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const sceneEl = document.querySelector("a-scene");
+  const debugText = document.querySelector("#debugText");
 
-      sceneEl.addEventListener("mindar-initialized", () => {
-        debugText.setAttribute("value", "MindAR Initialized!");
-      });
+  sceneEl.addEventListener("mindar-initialized", () => {
+    debugText.setAttribute("value", "MindAR Initialized!");
+  });
 
-      sceneEl.addEventListener("targetFound", () => {
-        debugText.setAttribute("value", "Target Detected!");
-      });
+  sceneEl.addEventListener("targetFound", () => {
+    debugText.setAttribute("value", "Target Detected!");
+  });
 
-      sceneEl.addEventListener("targetLost", () => {
-        debugText.setAttribute("value", "Target Lost");
-      });
+  sceneEl.addEventListener("targetLost", () => {
+    debugText.setAttribute("value", "Target Lost");
+  });
 
-      sceneEl.addEventListener("mindar-error", (e) => {
-        debugText.setAttribute("value", "Error: " + e.detail);
-      });
-    });
-  </script>
+  sceneEl.addEventListener("mindar-error", (e) => {
+    debugText.setAttribute("value", "Error: " + e.detail);
+  });
+});
+</script>
 
 </body>
 </html>
