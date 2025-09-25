@@ -11,72 +11,29 @@
   </style>
 </head>
 <body>
-  <a-scene mindar-image="imageTargetSrc: targetsMegMarriage.mind;" 
-           color-space="sRGB"
-           renderer="antialias: true; alpha: true; foveationLevel: 0; logarithmicDepthBuffer: true;"
-           vr-mode-ui="enabled: false"
-           device-orientation-permission-ui="enabled: true">
+  <a-scene mindar-image="imageTargetSrc: targetsMegMarriage.mind; maxTrack: 2; filterMinCF:0.001;" 
+         color-space="sRGB"
+         renderer="antialias: true; alpha: true;"
+         vr-mode-ui="enabled: false"
+         device-orientation-permission-ui="enabled: true">
 
-    <a-camera mindar-image-camera></a-camera>
+  <a-camera mindar-image-camera></a-camera>
 
-    <!-- Debug Text -->
-    <a-text id="debugText" value="Initializing AR..." 
-            color="#FF0000" 
-            position="0 2 0" 
+  <a-entity mindar-image-target="targetIndex: 0" position="0 0 0">
+    <a-text value="M. Meganathan & A. Divya" 
+            color="#FF69B4" 
+            position="0 1 0" 
+            align="center" 
+            scale="1 1 1">
+    </a-text>
+    <a-text value="24th October 2025" 
+            color="#FFFFFF" 
+            position="0 0.7 0" 
             align="center" 
             scale="0.8 0.8 0.8">
     </a-text>
+  </a-entity>
+</a-scene>
 
-    <!-- Show Current Target File -->
-    <a-text value="Target: targetsMegMarriage.mind" 
-            color="#00FF00" 
-            position="0 1.5 0" 
-            align="center" 
-            scale="0.6 0.6 0.6">
-    </a-text>
-
-    <!-- AR Content -->
-    <a-entity mindar-image-target="targetIndex: 0">
-      <a-text value="M. Meganathan & A. Divya" 
-              color="#FF69B4" 
-              position="0 1 0" 
-              align="center" 
-              scale="1.2 1.2 1.2"
-              rotation="0 0 0">
-        <a-animation attribute="rotation" to="0 360 0" dur="10000" repeat="indefinite"></a-animation>
-      </a-text>
-
-      <a-text value="24th October 2025" 
-              color="#FFFFFF" 
-              position="0 0.7 0" 
-              align="center" 
-              scale="1 1 1">
-      </a-text>
-    </a-entity>
-
-  </a-scene>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const sceneEl = document.querySelector("a-scene");
-      const debugText = document.querySelector("#debugText");
-
-      sceneEl.addEventListener("mindar-initialized", () => {
-        debugText.setAttribute("value", "MindAR Initialized!");
-      });
-
-      sceneEl.addEventListener("targetFound", () => {
-        debugText.setAttribute("value", "Target Detected!");
-      });
-
-      sceneEl.addEventListener("targetLost", () => {
-        debugText.setAttribute("value", "Target Lost");
-      });
-
-      sceneEl.addEventListener("mindar-error", (e) => {
-        debugText.setAttribute("value", "Error: " + e.detail);
-      });
-    });
-  </script>
 </body>
 </html>
