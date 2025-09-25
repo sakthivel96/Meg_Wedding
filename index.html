@@ -19,11 +19,11 @@
 
   <a-scene mindar-image="imageTargetSrc: targetsMegMarriage.mind; maxTrack: 2; filterMinCF:0.001;" 
            color-space="sRGB"
-           renderer="antialias: true; alpha: true; foveationLevel: 0; logarithmicDepthBuffer: true;"
+           renderer="antialias: true; alpha: true;"
            vr-mode-ui="enabled: false"
            device-orientation-permission-ui="enabled: true">
 
-    <!-- MindAR Camera -->
+    <!-- Camera -->
     <a-camera mindar-image-camera></a-camera>
 
     <!-- Debug Text -->
@@ -34,54 +34,54 @@
             scale="0.8 0.8 0.8">
     </a-text>
 
-    <!-- Show Current Target -->
-    <a-text value="Target: targetsMegMarriage.mind" 
-            color="#00FF00" 
-            position="0 1.7 0" 
-            align="center" 
-            scale="0.6 0.6 0.6">
-    </a-text>
-
     <!-- AR Content -->
     <a-entity mindar-image-target="targetIndex: 0" position="0 0 0">
 
-  <!-- Rotating Names -->
-  <a-text value="M. Meganathan & A. Divya" 
-          color="#FF69B4" 
-          position="0 1 0" 
-          align="center" 
-          scale="1 1 1">
-    <a-animation attribute="rotation" to="0 360 0" dur="20000" repeat="indefinite" easing="linear"></a-animation>
-  </a-text>
+      <!-- Rotating Names -->
+      <a-text value="M. Meganathan & A. Divya" 
+              color="#FF69B4" 
+              position="0 1 0" 
+              align="center" 
+              scale="1 1 1">
+        <a-animation attribute="rotation" to="0 360 0" dur="20000" repeat="indefinite" easing="linear"></a-animation>
+      </a-text>
 
-  <!-- Floating Hearts -->
-  <a-entity position="0 1.2 0">
-    <a-text value="❤️" scale="0.5 0.5 0.5" look-at="[camera]" position="-0.5 0 0">
-      <a-animation attribute="position" to="-0.5 0.5 0" dur="3000" direction="alternate" repeat="indefinite"></a-animation>
-    </a-text>
-    <a-text value="💖" scale="0.5 0.5 0.5" look-at="[camera]" position="0 0 0">
-      <a-animation attribute="position" to="0 0.5 0" dur="3500" direction="alternate" repeat="indefinite"></a-animation>
-    </a-text>
-    <a-text value="💞" scale="0.5 0.5 0.5" look-at="[camera]" position="0.5 0 0">
-      <a-animation attribute="position" to="0.5 0.5 0" dur="4000" direction="alternate" repeat="indefinite"></a-animation>
-    </a-text>
-  </a-entity>
+      <!-- Date -->
+      <a-text value="24th October 2025" 
+              color="#FFFFFF" 
+              position="0 0.7 0" 
+              align="center" 
+              scale="0.8 0.8 0.8">
+      </a-text>
 
-  <!-- Confetti / Sparkle -->
-  <a-entity position="0 1 0">
-    <a-sphere color="#FFD700" radius="0.03" position="-0.3 0 0">
-      <a-animation attribute="position" to="-0.3 0.5 0" dur="4000" direction="alternate" repeat="indefinite"></a-animation>
-    </a-sphere>
-    <a-sphere color="#FF69B4" radius="0.03" position="0 0 0">
-      <a-animation attribute="position" to="0 0.5 0" dur="4500" direction="alternate" repeat="indefinite"></a-animation>
-    </a-sphere>
-    <a-sphere color="#FFFFFF" radius="0.03" position="0.3 0 0">
-      <a-animation attribute="position" to="0.3 0.5 0" dur="5000" direction="alternate" repeat="indefinite"></a-animation>
-    </a-sphere>
-  </a-entity>
+      <!-- Floating Hearts (Mobile-Optimized using text component) -->
+      <a-entity position="0 1.2 0">
+        <a-entity text="value: ❤️; color: #FF0000; align: center; width: 0.5" 
+                  look-at="[camera]" position="-0.5 0 0">
+          <a-animation attribute="position" to="-0.5 0.5 0" dur="3000" direction="alternate" repeat="indefinite"></a-animation>
+        </a-entity>
+        <a-entity text="value: 💖; color: #FF69B4; align: center; width: 0.5" 
+                  look-at="[camera]" position="0 0 0">
+          <a-animation attribute="position" to="0 0.5 0" dur="3500" direction="alternate" repeat="indefinite"></a-animation>
+        </a-entity>
+        <a-entity text="value: 💞; color: #FFFFFF; align: center; width: 0.5" 
+                  look-at="[camera]" position="0.5 0 0">
+          <a-animation attribute="position" to="0.5 0.5 0" dur="4000" direction="alternate" repeat="indefinite"></a-animation>
+        </a-entity>
+      </a-entity>
 
-</a-entity>
-
+      <!-- Confetti / Sparkle -->
+      <a-entity position="0 1 0">
+        <a-sphere color="#FFD700" radius="0.04" position="-0.3 0 0">
+          <a-animation attribute="position" to="-0.3 0.5 0" dur="4000" direction="alternate" repeat="indefinite"></a-animation>
+        </a-sphere>
+        <a-sphere color="#FF69B4" radius="0.04" position="0 0 0">
+          <a-animation attribute="position" to="0 0.5 0" dur="4500" direction="alternate" repeat="indefinite"></a-animation>
+        </a-sphere>
+        <a-sphere color="#FFFFFF" radius="0.04" position="0.3 0 0">
+          <a-animation attribute="position" to="0.3 0.5 0" dur="5000" direction="alternate" repeat="indefinite"></a-animation>
+        </a-sphere>
+      </a-entity>
 
       <!-- Optional 3D Couple Model -->
       <!--
@@ -101,7 +101,7 @@
 
   </a-scene>
 
-  <!-- MindAR Event Debug Script -->
+  <!-- MindAR Debug Script -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const sceneEl = document.querySelector("a-scene");
