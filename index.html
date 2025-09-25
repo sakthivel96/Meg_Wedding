@@ -46,41 +46,46 @@
     <!-- AR Content -->
     <a-entity mindar-image-target="targetIndex: 0" position="0 0 -0.5">
 
+      <a-plane src="weddingCard.jpg" height="1.8" width="1.2" position="0 0 -0.2" align="center"
+        look-at="[camera]">
+      </a-plane>
+
       <!-- Rotating Names -->
-      <a-text value="M. Meganathan & A. Divya" color="#FF69B4" position="0 0 0" align="center" scale="0.5 0.5 0.5">
+      <a-text value="M. Meganathan & A. Divya" color="#FFD700" position="0 0 0" align="center" scale="0.3 0.3 0.3">
         <!-- <a-animation attribute="rotation" to="0 360 0" dur="20000" repeat="indefinite" easing="linear"></a-animation> -->
       </a-text>
 
       <!-- Date -->
-      <a-text value="24th October 2025" color="#FFFFFF" position="0 -0.3 0" align="center" scale="0.2 0.2 0.2">
+      <a-text value="24th October 2025" color="#FFFFFF" position="0 -0.1 0" align="center" scale="0.2 0.2 0.2">
       </a-text>
 
       <!-- Floating & Rotating Images -->
-      <a-entity position="0 0.3 0">
+      <a-entity position="0 0.3 0.2">
 
         <a-plane src="hearts_1.png" height="0.2" width="0.2" material="transparent: true" position="-0.6 0 0"
-          look-at="[camera]" animation="property: position; to: -0.6 0.8 0; dur: 3000; dir: alternate; loop: true"
-          animation__rot="property: rotation; to: 0 360 0; dur: 4000; loop: true">
-        </a-plane>
-
-        <a-plane src="hearts_2.png" height="0.2" width="0.2" material="transparent: true" position="-0.3 0 0"
-          look-at="[camera]" animation="property: position; to: -0.3 0.7 0; dur: 3500; dir: alternate; loop: true"
-          animation__rot="property: rotation; to: 0 360 0; dur: 4500; loop: true">
+          look-at="[camera]" animation="property: position; to: -0.4 -0.2 0; dur: 3000; dir: alternate; loop: true"
+          x-animation__rot="property: rotation; to: 0 360 0; dur: 4000; loop: true"
+          >
         </a-plane>
 
         <a-plane src="wedding_1.png" height="0.2" width="0.2" material="transparent: true" position="0 0 0"
-          look-at="[camera]" animation="property: position; to: 0 0.6 0; dur: 4000; dir: alternate; loop: true"
-          animation__rot="property: rotation; to: 0 360 0; dur: 5000; loop: true">
+          look-at="[camera]" animation="property: position; to: 0 -0.1 0; dur: 2000; dir: alternate; loop: true"
+          x-animation__rot="property: rotation; to: 0 360 0; dur: 5000; loop: true">
         </a-plane>
 
-        <a-plane src="wedding_2.png" height="0.2" width="0.2" material="transparent: true" position="0.3 0 0"
-          look-at="[camera]" animation="property: position; to: 0.3 0.7 0; dur: 4500; dir: alternate; loop: true"
-          animation__rot="property: rotation; to: 0 360 0; dur: 5500; loop: true">
+        <a-plane src="hearts_2.png" height="0.2" width="0.2" material="transparent: true" position="0.6 0 0"
+          look-at="[camera]" animation="property: position; to: 0.4 -0.2 0; dur: 3000; dir: alternate; loop: true"
+          x-animation__rot="property: rotation; to: 0 360 0; dur: 4500; loop: true">
         </a-plane>
 
-        <a-plane src="wedding_3.png" height="0.2" width="0.2" material="transparent: true" position="0.6 0 0"
-          look-at="[camera]" animation="property: position; to: 0.6 0.8 0; dur: 5000; dir: alternate; loop: true"
-          animation__rot="property: rotation; to: 0 360 0; dur: 6000; loop: true">
+        <a-plane src="wedding_2.png" height="0.2" width="0.2" material="transparent: true" position="-0.3 -0.5 0"
+          look-at="[camera]" animation="property: position; to: -0.3 -0.7 0; dur: 2000; dir: alternate; loop: true"
+          x-animation__rot="property: rotation; to: 0 360 0; dur: 5500; loop: true">
+        </a-plane>
+
+        <a-plane src="wedding_3.png" height="0.2" width="0.2" material="transparent: true" position="0.3 -0.5 0"
+          look-at="[camera]" animation="property: position; to: 0.3 -0.7 0; dur: 2000; dir: alternate; loop: true"
+          x-animation__rot="property: rotation; to: 0 360 0; dur: 6000; loop: true">
         </a-plane>
 
       </a-entity>
